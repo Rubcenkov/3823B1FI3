@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    double с1, с2, с3, с4;
+    printf("номера\n");
+    scanf("%g %g %g %g", &с1, &с2, &с3, &с4);
+    if (с2 == с3 && с3 == с4)
+        printf("1");
+    else
+    {
+        if (с1 == с3 && с3 == с4)
+            printf("2");
+        else
+        {
+            if (с1 == с2 && с2 == с4)
+                printf("3");
+            else
+                printf("4");
+        }
+    }
+    
+}
