@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+void main() {
+    float x1, y1, x2, y2, rad1, rad2, maxs, mins, e;
+    printf("коорд и рад 1: "); scanf("%f %f %f", &x1, &y1, &rad1);
+    printf("коорд и рад 2: "); scanf("%f %f %f", &x2, &y2, &rad2); 
+    e = sqrt(pow(x2-x1,2)+pow(y2-y1,2));
+    if (rad1>rad2) {
+        maxs = rad1;
+        mins = rad2;}
+    else{
+        maxs = rad2;
+        mins = rad1;}
+    if (e<(maxs - mins)) {
+        printf("Окр с радиусом  %f внутр окр %f", mins, maxs);}
+    else if (e>maxs+mins) {
+        printf("окр не кас");}
+    else if (e = maxs - mins) {
+        printf("окр кас изнутри");}
+    else{
+        printf("окр кас извне");}
+}
