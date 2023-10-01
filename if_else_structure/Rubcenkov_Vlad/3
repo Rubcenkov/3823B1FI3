@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void main(){
+    int x, y;
+    printf("Введите x и y: "); 
+    scanf("%d %d", &x, &y);
+    if (x!=0 && y!=0){
+        if (x>0 && y>0)
+            printf(" %d %d 1 четверть", x, y);
+        else if (x>0 && y<0)
+            printf(" %d %d 4 четверть", x, y);
+        else if (x<0 && y>0)
+            printf(" %d %d 2 четверть", x, y);
+        else if (x<0 && y<0)
+            printf(" %d %d 3 четверть", x, y);}
+    else if (x == 0 & y == 0){
+        printf(" %d %d в начале координат", x, y);}
+    else{
+        if (x == 0)
+            printf("%d %d на оси y", x, y);
+        else if (y == 0)
+            printf(" %d и %d на оси x ", x, y);}
+}
