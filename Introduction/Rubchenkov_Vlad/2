@@ -1,0 +1,10 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+void main(){
+    double a, b, e, f;
+    scanf("%lf %lf", &a, &b);
+    e = (pow(a, 2) + pow(b, 2)) / 2;
+    f = (double)(abs(a) + abs(b)) / 2;
+    printf("Средн квадратов %lf, Средн модулей %lf", e, f);
+}
