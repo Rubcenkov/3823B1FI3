@@ -1,0 +1,9 @@
+#include <stdio.h>
+#include <math.h>
+int main(){
+    float E, K, D;
+    scanf("%f", &E);
+    K = E / (2 * 3.14);
+    D = 3.14*K*K;
+    printf("%f", D);
+}
