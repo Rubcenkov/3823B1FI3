@@ -1,0 +1,7 @@
+#include <stdio.h>
+#include <math.h>
+int main() {
+    double a, b;
+    scanf("%lf %lf", &b, &d);
+    printf("sum %lf, raznost %lf, proisv %lf, chastn %lf", a+b, a-b, a*b, a/b);
+}
