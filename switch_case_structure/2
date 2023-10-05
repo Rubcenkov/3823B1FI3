@@ -1,0 +1,43 @@
+#include <stdio.h>
+int main()
+{
+    
+    int a, f, s;    
+    printf("Введите возраст от 20 до 69");
+    scanf("%d", &a);
+    f = a / 10;
+    switch(f){
+        case 2: printf("двадцать "); break;
+        case 3: printf("тридцать "); break;
+        case 4: printf("сорок "); break;
+        case 5: printf("пятьдесят "); break;
+        case 6: printf("шестьдесят "); break;
+        
+    }
+    s = a % 10;
+    switch (c){
+        case 0: printf(" "); break;
+        case 1: printf("один "); break;
+        case 2: printf("два "); break;
+        case 3: printf("три "); break;
+        case 4: printf("четыре "); break;
+        case 5: printf("пять "); break;
+        case 6: printf("шесть"); break;
+        case 7: printf("семь"); break;
+        case 8: printf("восемь"); break;
+        case 9: printf("девять"); break;
+    }
+    switch(s){
+        case 0: printf("лет"); break;
+        case 1: printf("год"); break;
+        case 2: printf("года"); break;
+        case 3: printf("года"); break;
+        case 4: printf("года"); break;
+        case 5: printf("лет"); break;
+        case 6: printf("лет"); break;
+        case 7: printf("лет"); break;
+        case 8: printf("лет"); break;
+        case 9: printf("лет"); break;
+    }
+    
+}
