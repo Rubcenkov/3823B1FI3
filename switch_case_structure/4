@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <math.h>
+void main(){
+    double q, w, e;
+    int x, y, k, ke, l, le;
+    printf("Введте сумму: "); 
+    scanf("%lf", &q);
+    w = modf(q, &e); 
+    x = (int) b; 
+    k = x/10;
+    ke = x%10;
+    y = w*100; 
+    l = y/10; 
+    le = y%10;
+    switch(ke){
+        case 0: printf("%d рублей", x); break;
+        case 1: printf("%d рубль", x); break;
+        case 2: printf("%d рубля", x); break;
+        case 3: printf("%d рубля", x); break;
+        case 4: printf("%d рубля", x); break;
+        case 5: printf("%d рублей", x); break;
+        case 6: printf("%d рублей", x); break;
+        case 7: printf("%d рублей", x); break;
+        case 8: printf("%d рублей", x); break;
+        case 9: printf("%d рублей", x); break;}
+    switch(le){
+        case 0: printf(" %d копеек", y); break;
+        case 1: printf(" %d копейка", y); break;
+        case 2: printf(" %d копейки", y); break;
+        case 3: printf(" %d копейки", y); break;
+        case 4: printf(" %d копейки", y); break;
+        case 5: printf(" %d копеек", y); break;
+        case 6: printf(" %d копеек", y); break;
+        case 7: printf(" %d копеек", y); break;
+        case 8: printf(" %d копеек", y); break;
+        case 9: printf(" %d копеек", y); break;}
+}
