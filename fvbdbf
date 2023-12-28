@@ -1,0 +1,122 @@
+#include <stdbool.h>
+#include <stdio.h>
+#include <string.h> 
+struct person{
+  char name[100];
+  char surname[100];
+  int year;
+};
+
+int addition(struct person people[100], int ind){
+    struct person newone;
+    printf("введите имя");
+    scanf("%s", newone.name);
+    printf("введите фамилию");
+    scanf("%s", newone.surname);
+    printf("введите год");
+    scanf("%d", &newone.year);
+    people[ind] = newone;
+    
+}
+
+int rewriting(struct person people[100], int index){
+    FILE *file = fopen("data.txt", "w");
+    
+    for(int i = 0; i < index; i++){
+        
+        fprintf(file, "%s\n", people[i].name);
+        fprintf(file, "%s\n", people[i].surname);
+        fprintf(file, "%d\n", people[i].year);
+        fprintf(file,"\n");
+        
+        fclose(file);
+    }
+
+}
+
+int delete(struct person people[100], int index, int n){ //н это позиция удаляеемого элемента
+    index--; // размер массива
+    for (int i = n; i < index; i++) {
+        people[i] = people[i + 1];
+    }
+    printf("%s\n", people[n].name); // проверка что элемент удален и на его месте следующий
+}
+
+int search(struct person people[100], int index){
+    char names[100];
+    char surnames[100];
+    printf("введите имя для поиска\n");
+    scanf("%s", names);
+    int l1;
+    l1 = strlen(names);
+    printf("введите фамилию для поиска\n");
+    scanf("%s", surnames);
+    int l2;
+    l2 = strlen(surnames);
+    for (int i = 0; i < index; i++){
+        
+        if(strncmp(people[i].name,names, l1) == 0 && strncmp(people[i].surname,surnames, l2) == 0){
+            printf("%s\n", people[i].name);
+            printf("%s\n", people[i].surname);
+            printf("%d\n", people[i].year);
+            break;
+        }
+    }
+}
+
+int sortirovka(){
+    
+
+
+}
+
+void sort(int numContacts, struct person people[100]) {
+    int temp;
+    for (int i = 0; i < numContacts - 1; i++) {
+        for (int j = 0; j < numContacts - i - 1; j++) {
+            if (people[j].year > people[j + 1].year) {
+                struct person temp = people[j];
+                people[j] = people[j + 1];
+                people[j + 1] = temp;
+            }
+        }
+    }
+}
+
+int main()
+{
+    struct person people[100] = {{"Jo", "Jo", 1986}, {"Co", "Co", 1999}, {"Ch", "Ol", 1974},{"Das", "Po", 2001}};
+    
+    int index = 4; // индекс новогог элемента для аддишион а также размер массива
+    int cmd; // команда 
+    int n; // номер записи для удаления
+    while (true){
+        printf("введите команду\n");
+        scanf("%d", &cmd);
+        if(cmd == 2){ // добавление
+            addition(people, index);
+            index += 1;
+            printf("%s\n", people[4].name);
+        }
+        if (cmd == 3){// запись в массив
+            rewriting(people, index);
+        }
+        if (cmd == 4){ // удаление
+            printf("какую запись хотите удалить from 0\n");
+            scanf("%d", &n);
+            delete(people, index, n);
+        }
+        if (cmd == 5){ //поиск
+            search(people, index);
+        }
+        if (cmd == 6){
+            sort(index, people);
+            for (int i = 0; i < index; i++){
+                printf("%d\n", people[i].year);
+            }
+        }
+        if (cmd == 0){
+            break;
+        }
+    }
+}
